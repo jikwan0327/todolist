@@ -1,58 +1,82 @@
 html {
-    height: 100%;
-    margin: 0px;
+    margin: 0;
+    height: 100vh;
 }
 
 body {
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
     align-items: center;
-    color: #f5f5f5;
-    background-color: #f5f5f5;
-    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(-200deg, PaleGreen, LightYellow);
 }
 
 .todotitle {
-    padding: 32px;
-    color: rosybrown;
-    font-size: 5rem;
+    font-size: 100px;
+    font-weight: bold;
+    color: azure;
 }
 
-.todo-head {
-    width: 600px;
-    height: 278px;
+.todohead > form > input {
+    width: 250px;
+    height: 35px;
+    font-size: large;
+    border: 0;
+    border-radius: 5px;
 }
 
-.checkbox {
-    display: flex;
-    border: 1px solid #ddd;
+.todohead > form > button {
+    width: 55px;
+    height: 35px;
+    font-size: large;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+}
+
+.todomain {
     background-color: white;
-    height: 3rem;
-    flex-direction: row;
-    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.empty {
+    width: 330px;
+    height: 10px;
+}
+
+.delete {
+    float: right;
+    border: 0;
+    background-color: white;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+div > ul {
+    list-style: none;
+    padding-left: 20px;
+}
+div > ul > li {
+    display: flex;
     align-items: center;
 }
-
-.list {
-    border: 1px solid #ddd;
-    background-color: white;
+div > ul > li > button {
+    outline: none;
+    border: none;
+    background-color: lightgoldenrodyellow;
+    height: 20px;
+    font-size: large;
 }
 
-.checkbox > button {
-    margin: 16px;
-    outline: none;
-    outline-color: initial;
-    outline-style: none;
-    outline-width: initial;
+div > ul > li > input {
+    transform: scale(1.5);
+    margin-left: 10px;
 }
 
-.checkbox > input {
-    display: flex;
-    text-align: center;
-    margin: 0 auto;
-    outline: none;
-    outline-color: initial;
-    outline-style: none;
-    outline-width: initial;
+.newlist {
+    margin-left: 10px;
+}
+
+#newlist {
+    margin-left: 8px;
 }
