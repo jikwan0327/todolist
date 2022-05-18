@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <title>TODO-VanilaJS</title>
         <link rel="stylesheet" href="index.css" />
-        <script src="index.js"></script>
     </head>
     <body>
         <div class="todotitle">Todos</div>
@@ -18,19 +17,16 @@
         <div class="todomain">
             <div class="empty"></div>
             <p id="emptylist"></p>
-            <ul>
-                <li>
-                    <button>X</button>
-                    <input type="checkbox" id="checkList" />
-                    <div id="newlist">hi</div>
-                </li>
-            </ul>
+            <ul></ul>
             <button class="delete" onclick="Delete()">Delete</button>
         </div>
     </body>
+
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script>
+    <script src="index.js"></script>
+    <!-- <script>
         $("#checkList").click(function () {
+            console.log("dsad");
             let checkList = $("#checkList").prop("checked");
 
             if (checkList) {
@@ -43,5 +39,5 @@
                 document.getElementById("newlist").style.textDecoration = "none";
             }
         });
-    </script>
+    </script> -->
 </html>
