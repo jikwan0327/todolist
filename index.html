@@ -11,13 +11,14 @@
             <form class="" action="index.html" method="post">
                 <label for="addlist"></label>
                 <input type="text" id="addlist" placeholder="새로운 할 일" />
-                <button type="button" onclick="getInput()">추가</button>
+                <button type="reset" id="reset" onclick="getInput()">추가</button>
             </form>
         </div>
         <div class="todomain">
             <div class="empty"></div>
             <p id="emptylist"></p>
             <ul></ul>
+            <div></div>
             <button class="delete" onclick="Delete()">Delete</button>
         </div>
     </body>

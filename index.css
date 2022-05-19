@@ -7,13 +7,13 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(-200deg, rgb(172, 238, 201), LightYellow);
+    background: linear-gradient(-200deg, rgb(172, 238, 201), white);
 }
 
 .todotitle {
     font-size: 100px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: azure;
 }
 
 .todohead > form > input {
