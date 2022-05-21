@@ -63,9 +63,12 @@ div > ul > li {
 div > ul > li > button {
     outline: none;
     border: none;
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     height: 20px;
     font-size: large;
+}
+div > ul > li > button:hover {
+    background-color: lightgoldenrodyellow;
 }
 
 div > ul > li > input {

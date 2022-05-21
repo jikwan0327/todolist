@@ -13,7 +13,7 @@ function getInputInput() {
     for (var k = 0; k < toDoList.length; k++) {
         doToList +=
             "<li>" +
-            '<button onclick="DeleteOne()">X</button>' +
+            `<button class="delOne" onclick="DeleteOne(${k})">X</button>` +
             `<input type="checkbox" class="checkList" onclick="is_checked(${k})"/>` +
             '<div class="newlist">' +
             toDoList[i + k] +
@@ -35,20 +35,21 @@ const Delete = () => {
 };
 
 function is_checked(value) {
-    console.log(value);
     var checkbox = document.getElementsByClassName("checkList");
-    var is_checked = checkbox.checked;
+    var is_checked = checkbox[value].checked;
+    var checkName = document.getElementsByClassName("newlist");
     if (is_checked) {
-        document.getElementsByClassName("newlist").style.color = "rgba(200, 200, 200, 100";
-        document.getElementsByClassName("newlist").style.textDecoration = "line-through";
+        checkName[value].style.color = "rgba(200, 200, 200, 100";
+        checkName[value].style.textDecoration = "line-through";
     } else {
-        document.getElementsByClassName("newlist").style.color = "black";
-        document.getElementsByClassName("newlist").style.textDecoration = "none";
+        checkName[value].style.color = "black";
+        checkName[value].style.textDecoration = "none";
     }
 }
 
-function DeleteOne() {
-    toDoList.pop(document.getElementById("addlist").value);
+function DeleteOne(value) {
+    var oneDel = document.getElementsByClassName("delOne");
+    toDoList.splice(value, 1);
     getInputInput();
 }
 
