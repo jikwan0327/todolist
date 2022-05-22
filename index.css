@@ -4,6 +4,7 @@ html {
 }
 
 body {
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -17,7 +18,7 @@ body {
 }
 
 .todohead > form > input {
-    width: 250px;
+    width: 300px;
     height: 35px;
     font-size: large;
     border: 0;
@@ -39,7 +40,7 @@ body {
 }
 
 .empty {
-    width: 330px;
+    width: 400px;
     height: 10px;
 }
 
@@ -84,4 +85,12 @@ div > ul > li > input {
     margin-left: 8px;
     font-size: 20px;
     font-style: normal;
+}
+
+.left-item {
+    display: flex;
+    justify-content: end;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
