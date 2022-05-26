@@ -19,7 +19,7 @@ function getInputInput() {
                 "<li>" +
                 `<button class="delOne" onclick="DeleteOne(${k})">X</button>` +
                 `<input type="checkbox" class="checkList" onclick="is_checked(${k})" checked="true"/>` +
-                '<div class="newlist" style="color: rgba(200, 200, 200, 100);text-decoration:line-through;" >' +
+                `<div class="newlist" ondblclick="editList(${k})" style="color: rgba(200, 200, 200, 100);text-decoration:line-through;" >` +
                 toDoList[i + k] +
                 "</div>" +
                 "</li>";
@@ -28,7 +28,7 @@ function getInputInput() {
                 "<li>" +
                 `<button class="delOne" onclick="DeleteOne(${k})">X</button>` +
                 `<input type="checkbox" class="checkList" onclick="is_checked(${k})"/>` +
-                '<div class="newlist">' +
+                `<div class="newlist" ondblclick="editList(${k})">` +
                 toDoList[i + k] +
                 "</div>" +
                 "</li>";
@@ -38,15 +38,12 @@ function getInputInput() {
     document.querySelector(".left-item").innerHTML = toDoList.length + "items left";
 }
 
-// for (var i = 0; i < toDoList.length; i++) {
-//     toDoList[i] = toDoList;
-// }
-
 const Delete = () => {
     var j = toDoList.length;
     toDoList.splice(0, j);
     document.querySelector("ul").innerHTML = "";
     i = 0;
+    getInputInput();
 };
 
 function is_checked(value) {
@@ -90,12 +87,14 @@ const active = (value) => {
         activeSelect[0].style.borderColor = "black";
         activeSelect[1].style.borderColor = "lightcoral";
         activeSelect[2].style.borderColor = "black";
-        for (var i = 0; i < toDoList.length; i++) {
+        console.log(toDoList.length);
+        for (var i = 0; i <= toDoList.length; i++) {
             if (checknum[i] === 1) {
                 checknum.splice(i, 1);
                 toDoList.splice(i, 1);
-                getInputInput();
+                i--;
             }
+            getInputInput();
         }
     }
     if (value === 3) {
@@ -104,3 +103,10 @@ const active = (value) => {
         activeSelect[2].style.borderColor = "lightcoral";
     }
 };
+
+function editList(value) {
+    let edit = document.getElementsByClassName("newlist");
+    result = window.prompt("수정할 내용을 입력하세요", toDoList[value]);
+    toDoList[value] = result;
+    getInputInput();
+}
